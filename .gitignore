@@ -3,3 +3,6 @@
 *.fliter
 debug
 ipch
+*.opensdf
+*.filters
+*.user
