@@ -1,7 +1,7 @@
 #include "main.h"
 
 Grade::Grade() : maxScoreNum(6), mNumScore(0) {
-	mScore = new int[6];
+	mScore = new int[maxScoreNum];
 }
 
 Grade::~Grade() {
@@ -45,4 +45,15 @@ Grade& Grade::operator=(const Grade &g) {
 		cout << mScore[i] << " ";
 	}
 	return *this;
+}
+
+void Grade::save(ostream &os) {
+	os.put(mNumScore);
+	os.write((char*)mScore, sizeof(int) * maxScoreNum);
+}
+
+void Grade::load(istream &fin) {
+	char tmp;
+	fin.get(tmp); mNumScore = tmp;
+	fin.read((char*)mScore, sizeof(int) * maxScoreNum);
 }

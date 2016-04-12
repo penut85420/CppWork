@@ -1,16 +1,18 @@
 #include "main.h"
 
-Student::Student() {
-
+Student::Student() : maxNameSize(11), maxIdSize(7) {
+	mName = new char[maxNameSize];
+	mID = new char[maxIdSize];
 }
 
 Student::~Student() {
-
+	delete [] mName;
+	delete [] mID;
 }
 
 void Student::setStudent(string name, string ID) {
-	mName = name;
-	mID = ID;
+	strcpy(mName, name.c_str());
+	strcpy(mID, ID.c_str());
 }
 
 void Student::show(int mode) {
@@ -55,13 +57,13 @@ Student& Student::operator=(const Student &s) {
 }
 
 void Student::save(ostream &os) {
-	os.put(mName.length());
-	os.write((char*)mName.c_str(), mName.length());
-
-	os.put(mID.length());
-	os.write((char*)mID.c_str(), mID.length());
+	os.write(mName, maxNameSize);
+	os.write(mID, maxIdSize);
+	mGrade.save(os);
 }
 
 void Student::load(istream &fin) {
-	
+	fin.read(mName, maxNameSize);
+	fin.read(mID, maxIdSize);
+	mGrade.load(fin);
 }

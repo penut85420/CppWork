@@ -94,7 +94,10 @@ void Class::save() {
 
 void Class::load(char className[]) {
 	ifstream fin(className, ios::in | ios::binary);
-	for (int i = 0; i < mNumStudent; i++);
+	if (!fin) return;
+	char tmp;
+	fin.get(tmp); mNumStudent = tmp;
+	for (int i = 0; i < mNumStudent; i++)
 	    mStudent[i].load(fin);
 }
 
@@ -108,7 +111,6 @@ void Class::query() {
 			load(className);
 			system("CLS");
 			do {
-				mStudent[0].show(1);
 				cmd = displayMenu(Operation, className);
 				if (cmd == 1) addStudent();
 				else if (cmd == 2) addScore();
@@ -117,7 +119,7 @@ void Class::query() {
 				else if (cmd == 5) deleteStudent();
 				else if (cmd == 6) show();
 				else if (cmd == 7) save();
-				system("PAUSE");
+				if (cmd != 7 && cmd != 8) system("PAUSE");
 				system("CLS");
 			} while (cmd != 8 && cmd != 7);
 		}

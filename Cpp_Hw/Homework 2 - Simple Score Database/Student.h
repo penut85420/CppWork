@@ -3,7 +3,8 @@
 #include "main.h"
 class Student {
 private:
-	string mName, mID;
+	const int maxNameSize, maxIdSize;
+	char *mName, *mID;
 	Grade mGrade;
 public:
 	Student();
