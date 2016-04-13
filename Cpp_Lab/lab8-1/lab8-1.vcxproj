@@ -11,8 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{AD7A51FC-3FF4-4164-8E95-0AA85B58524E}</ProjectGuid>
-    <RootNamespace>lab61</RootNamespace>
+    <ProjectGuid>{37B22BE0-437E-4CCE-8CB9-EF0007F7C003}</ProjectGuid>
+    <RootNamespace>lab81</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -60,18 +60,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Bag.cpp" />
-    <ClCompile Include="Ball.cpp" />
-    <ClCompile Include="Dice.cpp" />
-    <ClCompile Include="Game.cpp" />
-    <ClCompile Include="main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Bag.h" />
-    <ClInclude Include="Ball.h" />
-    <ClInclude Include="Dice.h" />
-    <ClInclude Include="Game.h" />
-    <ClInclude Include="main.h" />
+    <ClCompile Include="testCtor2.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

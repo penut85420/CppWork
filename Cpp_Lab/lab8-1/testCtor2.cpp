@@ -6,9 +6,9 @@ using namespace std;
 
 void printMessage(ofstream& os)
 {
-    //cout << "entering function printMessage()..." << endl;
+    cout << "entering function printMessage()..." << endl;
     os << "entering function printMessage()..." << endl;
-    //cout << "leaving function printMessage()" << endl;
+    cout << "leaving function printMessage()" << endl;
     os << "leaving function printMessage()" << endl;
 }
 

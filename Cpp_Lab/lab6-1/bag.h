@@ -1,15 +1,18 @@
-#ifndef BALL_H
-#define BALL_H
+#ifndef BAG_H
+#define BAG_H
+#include "main.h"
+#include "Ball.h"
 
-class Ball
-{
+class Bag {
 public:
-    enum Colors {Red, White};
-
-    bool isRed();
-    Ball(Colors color);
+	Ball *getABall();
+	void putBallsBack();
+	Bag(Ball::Colors color1, Ball::Colors color2, Ball::Colors color3);
+	Bag(Bag&);
+	~Bag();
 private:
-    Colors m_color;
+	Ball *m_balls[3];
+	int m_numberOfBalls;
 };
 
 #endif
