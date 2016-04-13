@@ -1,6 +1,6 @@
 #include "main.h"
 
-Student::Student() : maxNameSize(11), maxIdSize(7) {
+Student::Student() : maxNameSize(11), maxIdSize(5) {
 	mName = new char[maxNameSize];
 	mID = new char[maxIdSize];
 }
@@ -17,12 +17,10 @@ void Student::setStudent(string name, string ID) {
 
 void Student::show(int mode) {
 	cout << "名字：" << mName << endl
-		 << "學號：" << mID << endl;
-	if (!mode) cout << "平均：" << mGrade.avg() << endl;
-	else {
-		cout << "成績：";
-		mGrade.show();
-	}
+		 << "  學號：" << mID << endl;
+	cout << "  成績：";
+	mGrade.show();
+	if (!mode) cout << "  平均：" << mGrade.avg() << endl;
 }
 
 string Student::getName() {
