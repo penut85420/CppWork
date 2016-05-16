@@ -15,5 +15,7 @@ public:
 	Institute(istream&);
 	~Institute(void);
 	void print(ostream&);
+	void viewTeacher(string, ostream&);
+	void viewCourse(string, ostream&);
 };
 

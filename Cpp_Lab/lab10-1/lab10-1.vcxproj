@@ -11,8 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{E88A0640-461E-4D3C-82C5-FD29082C7784}</ProjectGuid>
-    <RootNamespace>Homework3TerisGame</RootNamespace>
+    <ProjectGuid>{2770988C-07AE-465B-96AB-5A2F92757492}</ProjectGuid>
+    <RootNamespace>lab101</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -60,20 +60,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Conmanip.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Object.cpp" />
-    <ClCompile Include="Order.cpp" />
-    <ClCompile Include="Point.cpp" />
-    <ClCompile Include="Rect.cpp" />
+    <ClCompile Include="Student.cpp" />
+    <ClCompile Include="StudentList.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Conmanip.h" />
-    <ClInclude Include="main.h" />
-    <ClInclude Include="Object.h" />
-    <ClInclude Include="Order.h" />
-    <ClInclude Include="Point.h" />
-    <ClInclude Include="Rect.h" />
+    <ClInclude Include="Student.h" />
+    <ClInclude Include="StudentList.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

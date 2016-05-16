@@ -8,5 +8,9 @@ Teacher::Teacher(istream &in) {
 Teacher::~Teacher(void) { }
 
 void Teacher::print(ostream &os) {
-	os << "      老師名稱：" << mName << endl;
+	os << "老師名稱：" << mName << endl;
+}
+
+string Teacher::getName() {
+	return mName;
 }

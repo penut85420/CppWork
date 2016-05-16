@@ -1,7 +1,10 @@
 #pragma once
 
-enum Side {Top, Bottom, Right, Left,
-	Hor, Ver, nonTouch};
+
+enum Side {
+	Top, Bottom, Right, Left,
+	Hor, Ver, nonTouch
+};
 
 class Rect {
 private:

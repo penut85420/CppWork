@@ -6,8 +6,11 @@ Point::Point(int x, int y)
 Point::Point() { };
 
 Point Point::operator+(const Point &rhs) const {
-	Point p(mX + rhs.mX, mY + rhs.mY);
-	return p;
+	return Point (mX + rhs.mX, mY + rhs.mY);
+}
+
+Point Point::operator-(const Point &rhs) const {
+	return Point (mX - rhs.mX, mY - rhs.mY);
 }
 
 bool Point::isInside(Rect rect) const {
@@ -58,7 +61,13 @@ void Point::reside(Side s) {
 }
 
 void Point::rotate() {
-	int newX = -mY, newY = -mX;
+	int newX = -mY, newY = mX;
 	mX = newX;
 	mY = newY;
+}
+
+bool Point::operator==(const Point &rhs) const {
+	if (rhs.mX != mX) return false;
+	if (rhs.mY != mY) return false;
+	return true;
 }

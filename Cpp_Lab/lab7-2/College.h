@@ -12,4 +12,6 @@ public:
 	College(istream&);
 	~College();
 	void print(ostream&);
+	void viewTeacher(string, ostream&);
+	void viewCourse(string, ostream&);
 };

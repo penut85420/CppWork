@@ -9,4 +9,5 @@ public:
 	Teacher(istream&);
 	~Teacher(void);
 	void print(ostream &os);
+	string getName();
 };

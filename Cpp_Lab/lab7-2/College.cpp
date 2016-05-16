@@ -16,10 +16,28 @@ College::~College() {
 }
 
 void College::print(ostream &os) {
-	os << "  學院名稱：" << mName << endl;
-	for (int i = 0; i < mNumDepartment; i++)
+	os << "學院名稱：" << mName << endl;
+	/*for (int i = 0; i < mNumDepartment; i++)
 		mDepartment[i]->print(os);
 
 	for (int i = 0; i < numInstitute; i++)
-		mInstitute[i]->print(os);
+		mInstitute[i]->print(os);*/
+}
+
+void College::viewTeacher(string name, ostream &os) {
+	for (auto it = mDepartment.begin();
+			it != mDepartment.end(); it++)
+		(*it)->viewTeacher(name, os);
+	for (auto it = mInstitute.begin();
+			it != mInstitute.end(); it++)
+		(*it)->viewTeacher(name, os);
+}
+
+void College::viewCourse(string name, ostream &os) {
+	for (auto it = mDepartment.begin();
+			it != mDepartment.end(); it++)
+		(*it)->viewCourse(name, os);
+	for (auto it = mInstitute.begin();
+			it != mInstitute.end(); it++)
+		(*it)->viewCourse(name, os);
 }

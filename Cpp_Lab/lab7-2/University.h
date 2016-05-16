@@ -15,5 +15,7 @@ public:
 	void unitTest();
 	void query();
 	string getName(string);
-	void viewTeacher(string, ostream);
+	void viewTeacher(string, ostream&);
+	bool checkString(string);
+	void viewCourse(string, ostream&);
 };

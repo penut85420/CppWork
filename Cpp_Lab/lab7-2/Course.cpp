@@ -9,9 +9,17 @@ Course::Course(istream &in) {
 Course::~Course(void) { }
 
 void Course::print(ostream &os) {
-	os << "      課程名稱：" << mName << endl
-		<< "      課程代號：" << mID << endl
-		<< "      學年度：" << mYear << endl
-		<< "      學期：" << mSemester << endl
-		<< "      開課教師：" << mTeacher << endl;
+	os << "課程名稱：" << mName << endl
+		<< "課程代號：" << mID << endl
+		<< "  學年度：" << mYear << endl
+		<< "    學期：" << mSemester << endl
+		<< "開課教師：" << mTeacher << endl;
+}
+
+string Course::getName() {
+	return mName;
+}
+
+string Course::getTeacherName() {
+	return mTeacher;
 }

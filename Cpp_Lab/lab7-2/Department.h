@@ -12,4 +12,6 @@ public:
 	Department(istream&);
 	~Department();
 	void print(ostream&);
+	void viewTeacher(string, ostream&);
+	void viewCourse(string, ostream&);
 };

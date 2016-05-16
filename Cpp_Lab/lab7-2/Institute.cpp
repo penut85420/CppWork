@@ -15,5 +15,25 @@ Institute::Institute(istream &in) {
 Institute::~Institute(void) { }
 
 void Institute::print(ostream &os) {
-	os << "    研究所：" << mName << endl;
+	os << "研究所：" << mName << endl;
+}
+
+void Institute::viewTeacher(string name, ostream &os) {
+	for (auto it = mTeacher.begin();
+			it != mTeacher.end(); it++) {
+		if ((*it)->getName() == name) {
+			os << "教師名稱：" << name << endl;
+			os << "學系名稱：" << mName << endl;
+		}
+	}
+}
+
+void Institute::viewCourse(string name, ostream &os) {
+	for (auto it = mCourse.begin();
+			it != mCourse.end(); it++) {
+		if ((*it)->getName() == name) {
+			(*it)->print(os);
+			print(os);
+		}
+	}
 }
