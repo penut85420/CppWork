@@ -1,5 +1,5 @@
 #include "StudentList.h"
-
+#include "Iterator.h"
 
 StudentList::StudentList(void) { 
 	mTail = mHead = new Node();
@@ -61,4 +61,9 @@ Student*& StudentList::operator[](int i) {
 	Node *t = mHead;
 	do t = t->mNext; while (i-- + 1);
 	return t->mData;
+}
+
+
+void StudentList::insertEntry(Iterator iter, Student *student) {
+	iter.insert(student);
 }

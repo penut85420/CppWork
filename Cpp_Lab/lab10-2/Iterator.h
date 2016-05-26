@@ -1,8 +1,6 @@
 #pragma once
 #include "StudentList.h"
 #include "Student.h"
-
-class Student;
 class Iterator {
 public:
 	Iterator(void);
@@ -13,6 +11,7 @@ public:
 	Student &operator*() const;
     Student *operator->() const;
     bool hasMoreData() const;
+	void insert(Student*);
 
 private:
 	static Student mDummy;

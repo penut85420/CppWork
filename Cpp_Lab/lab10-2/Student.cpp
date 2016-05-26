@@ -37,3 +37,7 @@ bool Student::matchID(const char *s) {
 	if (!strcmp(mID, s)) return true;
 	return false;
 }
+
+bool Student::ofTheSameDepartment(Student &student2) {
+	return !strcmp(mDepartment, student2.mDepartment);
+};

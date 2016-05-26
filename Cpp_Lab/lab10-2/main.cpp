@@ -54,7 +54,7 @@ void main() {
 
 	// 在 id="333333333" 的學生之後再加入一個學生
 	for (iter1.reset(); iter1.hasMoreData(); iter1.next())
-		if (iter1->IDEquals("333333333"))
+		if (iter1->matchID("333333333"))
 			sList.insertEntry(iter1, 
 			new Student("Carol Chen", "333331111", 
 			"0933333111", "Business"));

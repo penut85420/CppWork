@@ -1,6 +1,7 @@
 #pragma once
 #include "Student.h"
 
+class Iterator;
 class StudentList {
 	friend class Iterator;
 
@@ -12,6 +13,7 @@ public:
     Student* find(char*);
 	int size() const;
 	Student*& operator[](int);
+	void insertEntry(Iterator, Student*);
 
 private:
 	class Node {

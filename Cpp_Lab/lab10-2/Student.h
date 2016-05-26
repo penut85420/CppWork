@@ -13,4 +13,5 @@ public:
 	~Student();
 	void display(std::ostream&) const;
 	bool matchID(const char*);
+	bool ofTheSameDepartment(Student&);
 };

@@ -12,7 +12,8 @@ Iterator::Iterator(StudentList &list) {
 Iterator::~Iterator(void) { }
 
 Student* Iterator::operator->() const {
-	return mIterator->mData;
+	if (mIterator) return mIterator->mData;
+	return &mDummy;
 }
 
 Student& Iterator::operator*() const {
@@ -20,7 +21,7 @@ Student& Iterator::operator*() const {
 }
 
 void Iterator::reset() {
-	mIterator = mList->mHead;
+	mIterator = mList->mHead->mNext;
 }
 
 void Iterator::next() {
@@ -30,4 +31,10 @@ void Iterator::next() {
 bool Iterator::hasMoreData() const {
 	if (mIterator == mList->mTail) return false;
 	return true;
+}
+
+void Iterator::insert(Student *student) {
+	StudentList::Node *p = mIterator->mNext;
+	mIterator->mNext = new StudentList::Node(student);
+	mIterator->mNext->mNext = p;
 }
