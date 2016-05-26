@@ -18,3 +18,16 @@ Student* Iterator::operator->() const {
 Student& Iterator::operator*() const {
 	return *mIterator->mData;
 }
+
+void Iterator::reset() {
+	mIterator = mList->mHead;
+}
+
+void Iterator::next() {
+	mIterator = mIterator->mNext;
+}
+
+bool Iterator::hasMoreData() const {
+	if (mIterator == mList->mTail) return false;
+	return true;
+}

@@ -52,6 +52,13 @@ Student* StudentList::find(char *id) {
 }
 
 int StudentList::size() const {
-	Node *t = mHead;
+	Node *t = mHead; int n = 0;
+	while (t->mNext != NULL) n++;
+	return n;
+}
 
+Student*& StudentList::operator[](int i) {
+	Node *t = mHead;
+	do t = t->mNext; while (i-- + 1);
+	return t->mData;
 }

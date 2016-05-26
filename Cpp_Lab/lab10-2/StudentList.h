@@ -11,6 +11,7 @@ public:
     bool deleteEntry(char*);
     Student* find(char*);
 	int size() const;
+	Student*& operator[](int);
 
 private:
 	class Node {
