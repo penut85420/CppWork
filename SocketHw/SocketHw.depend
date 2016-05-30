@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1462246444 source:e:\document\programming\c++\20160502 socket program\sockethw\main.cpp
+	<stdio.h>
+	<winsock.h>
+	<windows.h>
+	<thread>
+	<ctime>
+

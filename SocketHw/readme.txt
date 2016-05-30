@@ -1,0 +1,2 @@
+執行SocketHw.exe後選擇server端或者client端
+輸入username跟port後等待連接指示即可聊天
