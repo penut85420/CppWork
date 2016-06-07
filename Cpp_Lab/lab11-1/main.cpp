@@ -5,7 +5,9 @@
 using namespace std;
 
 void main() {
-	StudentList sList;
+	ofstream logfile("main2.log");
+	LoggedStudentList sList(logfile);
+
 	sList.appendEntry(new Student("Mary Chen", "111111111", 
 		"0933111111", 
 		"Business"));
@@ -62,5 +64,7 @@ void main() {
 	cout << sList.size();
 	for (i=0; i<sList.size(); i++)
 		sList[i]->display(cout);
+
+	sList.dump();
 	system("PAUSE");
 }
