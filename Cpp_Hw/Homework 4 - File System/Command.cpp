@@ -36,6 +36,8 @@ void Command::query() {
 			deleteFile(); break;
 		case  7:
 			deleteFolder(); break;
+		case 8:
+			searchEntry(); break;
 		case 13:
 			return ; break;
 		}
@@ -78,6 +80,13 @@ string Command::getName(bool isFolder) {
 	return name;
 }
 
+string Command::reqName(string msg) {
+	string name;
+	cout << "請輸入" << msg << "：";
+	cin >> name;
+	return name;
+}
+
 void Command::cdFolder() {
 	string name = getName(true);
 	auto result = mNowFolder->search(name, true);
@@ -104,5 +113,15 @@ bool Command::isEmpty(EntryIt it) {
 }
 
 void Command::deleteFolder() {
+	string name = getName(true);
+	auto result = mNowFolder->search(name, true);
+	if (!isEmpty(result)) {
+		(*result)->removeEntry();
+		mNowFolder->removeEntry(result);
+	}
+}
+
+void Command::searchEntry() {
+	string name = reqName("檔案或資料夾名稱");
 
 }

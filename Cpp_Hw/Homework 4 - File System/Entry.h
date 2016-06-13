@@ -2,6 +2,9 @@
 #include <string>
 #include <vector>
 
+class Entry;
+typedef std::vector<Entry*>::iterator EntryIt;
+
 class Entry {
 public:
 	Entry(std::string);

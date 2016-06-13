@@ -10,9 +10,9 @@ public:
 	~EntryFolder(void);
 	void addEntry(Entry*);
 	void removeEntry(EntryIt);
+	void removeEntry();
 	int getSize();
 	bool isFolder();
-	//Entry* search(string, bool);
 	EntryIt search(string, bool);
 	string getPath();
 	EntryFolder* lastFolder();

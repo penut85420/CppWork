@@ -51,6 +51,10 @@ EntryIt EntryFolder::dump() {
 	return mEntry.end();
 }
 
-void removeEntry(EntryIt it) {
-
+void EntryFolder::removeEntry() {
+	for (auto i = mEntry.begin();
+			i != mEntry.end(); i++) {
+		(*i)->removeEntry();
+		delete *i;
+	}
 }

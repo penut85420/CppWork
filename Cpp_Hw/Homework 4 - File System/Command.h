@@ -16,9 +16,11 @@ public:
 	void addFolder();
 	void deleteFile();
 	void deleteFolder();
-	
+	void searchEntry();
+
 	bool isEmpty(EntryIt);
 	string getName(bool);
+	string reqName(string);
 
 private:
 	EntryFolder *mRoot, *mNowFolder;
