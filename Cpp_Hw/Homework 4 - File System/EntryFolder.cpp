@@ -1,4 +1,5 @@
 #include "EntryFolder.h"
+#include "EntryFile.h"
 #include <iostream>
 using namespace std;
 
@@ -60,11 +61,23 @@ void EntryFolder::removeEntry() {
 	}
 }
 
-void EntryFolder::printList(int prefix) {
+void EntryFolder::printList(int prefix, bool printFolder) {
 	for (int i = 0; i < prefix; i++)
 		cout << " ";
 	cout << getName() << endl;
+
+	if (printFolder || (!printFolder && !prefix))
 	for (auto i = mEntry.begin();
 			i != mEntry.end(); i++)
-		(*i)->printList(prefix + 2);
+		(*i)->printList(prefix + 2, printFolder);
+}
+
+EntryIt EntryFolder::searchFile(string content) {
+	for (auto i = mEntry.begin();
+			i != mEntry.end(); i++) {
+		if (!(*i)->isFolder()) {
+			int result = ((EntryFile*)*i)->getContent().find(content, 0);
+			if (result != -1) return i;
+		}
+	}
 }

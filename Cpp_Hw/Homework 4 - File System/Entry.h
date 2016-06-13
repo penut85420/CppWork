@@ -12,7 +12,7 @@ public:
 	virtual int getSize() = 0;
 	virtual bool isFolder() = 0;
 	virtual void removeEntry() = 0;
-	virtual void printList(int) = 0;
+	virtual void printList(int, bool) = 0;
 	std::string getName();
 
 private:

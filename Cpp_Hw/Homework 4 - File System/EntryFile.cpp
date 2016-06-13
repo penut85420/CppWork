@@ -21,8 +21,12 @@ void EntryFile::print() {
 
 void EntryFile::removeEntry() { }
 
-void EntryFile::printList(int prefix) {
+void EntryFile::printList(int prefix, bool) {
 	for (int i = 0; i < prefix; i++)
 		cout << " ";
 	cout << getName() << endl;
+}
+
+string EntryFile::getContent() {
+	return mContent;
 }

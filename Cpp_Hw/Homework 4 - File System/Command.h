@@ -17,7 +17,9 @@ public:
 	void deleteFile();
 	void deleteFolder();
 	void searchEntry();
-	void printList();
+	void printList(bool);
+	void searchFile();
+	void getSize();
 
 	bool isEmpty(EntryIt);
 	string getName(bool);

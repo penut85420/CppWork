@@ -39,7 +39,13 @@ void Command::query() {
 		case  8:
 			searchEntry(); break;
 		case  9:
-			printList(); break;
+			printList(false); break;
+		case 10:
+			printList(true); break;
+		case 11:
+			searchFile(); break;
+		case 12:
+			getSize(); break;
 		case 13:
 			return ; break;
 		}
@@ -133,6 +139,31 @@ void Command::searchEntry() {
 		cout << mNowFolder->getPath() << "/" << name << endl;
 }
 
-void Command::printList() {
-	mNowFolder->printList(0);
+void Command::printList(bool printFolder) {
+	mNowFolder->printList(0, printFolder);
+}
+
+void Command::searchFile() {
+	string content = reqName("欲搜尋的字串");
+	auto result = mNowFolder->searchFile(content);
+	if (!isEmpty(result)) {
+		cout << mNowFolder->getPath() << "/" << (*result)->getName() << endl
+			<< "檔案內容：" << ((EntryFile*)*result)->getContent() << endl;
+	}
+}
+
+void Command::getSize() {
+	string target;
+	cin.get();
+	cout << "請輸入檔案或資料夾名稱（不輸入則為當前資料夾）：";
+	getline(cin, target);
+	if (target == "") cout << mNowFolder->getSize() << " Bytes\n";
+	else {
+		auto result = mNowFolder->search(target, true);
+		if (isEmpty(result)) result = mNowFolder->search(target, false);
+		if (isEmpty(result))
+			cout << "不存在此名稱的檔案或資料夾\n";
+		else 
+			cout << (*result)->getSize() << " Bytes\n";
+	}
 }
