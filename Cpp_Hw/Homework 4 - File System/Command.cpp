@@ -36,8 +36,10 @@ void Command::query() {
 			deleteFile(); break;
 		case  7:
 			deleteFolder(); break;
-		case 8:
+		case  8:
 			searchEntry(); break;
+		case  9:
+			printList(); break;
 		case 13:
 			return ; break;
 		}
@@ -123,5 +125,14 @@ void Command::deleteFolder() {
 
 void Command::searchEntry() {
 	string name = reqName("檔案或資料夾名稱");
+	auto result = mNowFolder->search(name, true);
+	if (isEmpty(result)) result = mNowFolder->search(name, false);
+	if (isEmpty(result))
+		cout << "不存在此名稱的檔案或資料夾\n";
+	else 
+		cout << mNowFolder->getPath() << "/" << name << endl;
+}
 
+void Command::printList() {
+	mNowFolder->printList(0);
 }

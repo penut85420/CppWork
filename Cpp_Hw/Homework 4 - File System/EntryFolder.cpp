@@ -1,4 +1,5 @@
 #include "EntryFolder.h"
+#include <iostream>
 using namespace std;
 
 EntryFolder::EntryFolder(string name, EntryFolder *last) 
@@ -57,4 +58,13 @@ void EntryFolder::removeEntry() {
 		(*i)->removeEntry();
 		delete *i;
 	}
+}
+
+void EntryFolder::printList(int prefix) {
+	for (int i = 0; i < prefix; i++)
+		cout << " ";
+	cout << getName() << endl;
+	for (auto i = mEntry.begin();
+			i != mEntry.end(); i++)
+		(*i)->printList(prefix + 2);
 }

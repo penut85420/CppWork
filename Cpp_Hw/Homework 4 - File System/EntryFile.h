@@ -10,6 +10,7 @@ public:
 	bool isFolder();
 	void print();
 	void removeEntry();
+	void printList(int);
 
 private:
 	std::string mContent;

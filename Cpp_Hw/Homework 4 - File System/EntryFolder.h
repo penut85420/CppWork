@@ -17,6 +17,7 @@ public:
 	string getPath();
 	EntryFolder* lastFolder();
 	EntryIt dump();
+	void printList(int);
 
 private:
 	vector<Entry*> mEntry;
