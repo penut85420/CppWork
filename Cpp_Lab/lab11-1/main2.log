@@ -1,0 +1,37 @@
+LoggedStudentList::appendEntry()
+    Name: Mary Chen
+ID: 111111111
+Phone: 0933111111
+Department: Business
+
+LoggedStudentList::appendEntry()
+    Name: John Wang
+ID: 222222222
+Phone: 0928222222
+Department: Computer Science
+
+LoggedStudentList::appendEntry()
+    Name: Mel Lee
+ID: 333333333
+Phone: 0968333333
+Department: Mechanical Engineering
+
+LoggedStudentList::appendEntry()
+    Name: Bob Tsai
+ID: 444444444
+Phone: 0930444444
+Department: Electrical Engineering
+
+LoggedStudentList::appendEntry()
+    Name: Ron Yang
+ID: 555555555
+Phone: 0918555555
+Department: Computer Science
+
+LoggedStudentList::insertEntry()
+    Name: Carol Chen
+ID: 333331111
+Phone: 0933333111
+Department: Business
+
+End

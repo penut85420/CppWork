@@ -3,7 +3,13 @@
 using namespace std;
 
 Command::Command(void) {
-	mRoot = new EntryFolder("root", NULL);
+	ifstream fin("data.dat");
+	int id;
+	if (fin) {
+		fin >> id;
+		if (id != 1) cout << "錯誤的檔案格式" << endl;
+		else mRoot = new EntryFolder(fin, NULL);
+	} else mRoot = new EntryFolder("root", NULL);
 	mNowFolder = mRoot;
 }
 
@@ -47,7 +53,7 @@ void Command::query() {
 		case 12:
 			getSize(); break;
 		case 13:
-			return ; break;
+			save(); return ;
 		}
 		system("PAUSE");
 		system("CLS");
@@ -149,7 +155,7 @@ void Command::searchFile() {
 	if (!isEmpty(result)) {
 		cout << mNowFolder->getPath() << "/" << (*result)->getName() << endl
 			<< "檔案內容：" << ((EntryFile*)*result)->getContent() << endl;
-	}
+	} else cout << "當前資料夾無檔案包含該字串" << endl;
 }
 
 void Command::getSize() {
@@ -166,4 +172,9 @@ void Command::getSize() {
 		else 
 			cout << (*result)->getSize() << " Bytes\n";
 	}
+}
+
+void Command::save() {
+	ofstream fout("data.dat");
+	mRoot->save(fout);
 }

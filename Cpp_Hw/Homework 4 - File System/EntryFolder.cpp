@@ -28,15 +28,15 @@ EntryIt EntryFolder::search(string name, bool isFolder) {
 	for (auto i = mEntry.begin();
 			i != mEntry.end(); i++) {
 		if ((*i)->isFolder() == isFolder)
-			if ((*i)->getName() == name)
+			if ((*i)->cmpName(name))
 				return i;
 	}
 	return mEntry.end();
 }
 
 string EntryFolder::getPath() {
-	if (!mLastFolder) return getName();
-	return mLastFolder->getPath() + "/" + getName();
+	if (!mLastFolder) return mName;
+	return mLastFolder->getPath() + "/" + mName;
 }
 
 EntryFolder* EntryFolder::lastFolder() {
@@ -64,7 +64,7 @@ void EntryFolder::removeEntry() {
 void EntryFolder::printList(int prefix, bool printFolder) {
 	for (int i = 0; i < prefix; i++)
 		cout << " ";
-	cout << getName() << endl;
+	cout << mName << endl;
 
 	if (printFolder || (!printFolder && !prefix))
 	for (auto i = mEntry.begin();
@@ -78,6 +78,32 @@ EntryIt EntryFolder::searchFile(string content) {
 		if (!(*i)->isFolder()) {
 			int result = ((EntryFile*)*i)->getContent().find(content, 0);
 			if (result != -1) return i;
+		}
+	}
+	return dump();
+}
+
+void EntryFolder::save(ofstream &fout) {
+	fout << 1 << " " << mEntry.size() << " " << mName << endl;
+	for (auto i = mEntry.begin();
+			i != mEntry.end(); i++)
+		(*i)->save(fout);
+}
+
+EntryFolder::EntryFolder(ifstream &fin, EntryFolder* lastFolder) {
+	mLastFolder = lastFolder;
+	int size, id;
+	EntryFolder *newFolder;
+	EntryFile *newFile;
+	fin >> size >> mName;
+	for (int i = 0; i < size; i++) {
+		fin >> id;
+		if (id) {
+			newFolder = new EntryFolder(fin, this);
+			mEntry.push_back(newFolder);
+		} else {
+			newFile = new EntryFile(fin);
+			mEntry.push_back(newFile);
 		}
 	}
 }

@@ -1,5 +1,7 @@
 #include <iostream>
+#include <fstream>
 #include "Student.h"
+#include "LoggedStudentList.h"
 #include "StudentList.h"
 #include "Iterator.h"
 using namespace std;

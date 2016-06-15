@@ -20,6 +20,7 @@ public:
 	void printList(bool);
 	void searchFile();
 	void getSize();
+	void save();
 
 	bool isEmpty(EntryIt);
 	string getName(bool);
