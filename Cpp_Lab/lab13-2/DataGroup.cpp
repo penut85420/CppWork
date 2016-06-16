@@ -88,6 +88,7 @@ void DataGroup::serialize(bool bOutput)
 		for (i = 0; i < sizeof(int); i++)
 			ptr[i] = readByte();
 
+		m_dataArray = new double[m_dataArraySize];
 		for (i = 0; i < m_numberOfData; i++) {
 			ptr = (unsigned char *) &m_dataArray[i];
 			for (j = 0; j < sizeof(double); j++)

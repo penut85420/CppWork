@@ -1,7 +1,7 @@
+#pragma once
 #include <cstring>
 
-class DataGroup
-{
+class DataGroup {
 public:
     DataGroup(int numberOfNames, char *names[], 
                 int sizeOfArray, 
@@ -9,6 +9,7 @@ public:
     virtual ~DataGroup();
     void serialize(bool bOutput=true);
 	void freeMemory();
+
 private:
     virtual void openStream(bool bOutput) = 0;
     virtual void closeStream(bool bOutput) = 0;

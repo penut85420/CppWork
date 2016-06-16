@@ -11,8 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{1C610EFC-96FE-4364-973B-21D9C10A52C6}</ProjectGuid>
-    <RootNamespace>lab132</RootNamespace>
+    <ProjectGuid>{F384410F-549E-4098-A80B-CDCCA360D0A1}</ProjectGuid>
+    <RootNamespace>lab135</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -60,17 +60,29 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BinaryFileDataGroup.cpp" />
-    <ClCompile Include="DataGroup.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="ScreenDataGroup.cpp" />
-    <ClCompile Include="TextFileDataGroup.cpp" />
+    <ClInclude Include="AbstractFactory.h" />
+    <ClInclude Include="QtButton.h" />
+    <ClInclude Include="QtFactory.h" />
+    <ClInclude Include="QtMenu.h" />
+    <ClInclude Include="Singleton.h" />
+    <ClInclude Include="Win32Button.h" />
+    <ClInclude Include="Win32Factory.h" />
+    <ClInclude Include="Win32Menu.h" />
+    <ClInclude Include="yayButton.h" />
+    <ClInclude Include="yayMenu.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BinaryFileDataGroup.h" />
-    <ClInclude Include="DataGroup.h" />
-    <ClInclude Include="ScreenDataGroup.h" />
-    <ClInclude Include="TextFileDataGroup.h" />
+    <ClCompile Include="AbstractFactory.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="QtButton.cpp" />
+    <ClCompile Include="QtFactory.cpp" />
+    <ClCompile Include="QtMenu.cpp" />
+    <ClCompile Include="Singleton.cpp" />
+    <ClCompile Include="Win32Button.cpp" />
+    <ClCompile Include="Win32Factory.cpp" />
+    <ClCompile Include="Win32Menu.cpp" />
+    <ClCompile Include="yayButton.cpp" />
+    <ClCompile Include="yayMenu.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

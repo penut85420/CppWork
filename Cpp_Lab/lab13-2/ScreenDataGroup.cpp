@@ -8,7 +8,9 @@ void ScreenDataGroup::openStream(bool) { }
 void ScreenDataGroup::closeStream(bool) { }
 
 unsigned char ScreenDataGroup::readByte() {
-	return 0;
+	int x;
+	cin >> hex >> x;
+	return x;
 }
     
 void ScreenDataGroup::writeByte(unsigned char data) {
