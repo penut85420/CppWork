@@ -12,7 +12,6 @@ struct adj_list {
 
 int GM[100][100] = {0};
 adj_list *GL[100];
-int BFS[100][2], BFS_N = 0;
 
 void addq(int n) {
     queue[++rear] = n;
