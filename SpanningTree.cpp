@@ -12,6 +12,7 @@ struct adj_list {
 
 int GM[100][100] = {0};
 adj_list *GL[100];
+int arr[100][2], n = 0;
 
 void addq(int n) {
     queue[++rear] = n;
@@ -43,9 +44,11 @@ void bfs(int v) {
 
         for(w = GL[v]->next ; w ; w = w->next) {
             if(!visited[w->n]) {
-				if (flag) printf(", ");
-				else flag = 1;
-				printf("{%d,%d}", v, w->n);
+				//if (flag) printf(", ");
+				//else flag = 1;
+				//printf("{%d,%d}", v, w->n);
+                arr[n][0] = v;
+                arr[n++][1] = w->n;
                 // printf(" %d", w->n);
                 addq(w->n);
                 visited[w->n] = true;
@@ -102,6 +105,10 @@ int main() {
     printf("\nAdjacency list Breadth First Search:\n");
     addq(0);
     bfs(0);
+    for (i = 0; i < n; i++) {
+        if (i) printf(", ");
+        printf("{%d,%d}", arr[i][0], arr[i][1]);
+    }
     printf("\n");
     return max;
 }
