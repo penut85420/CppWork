@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1491324352 source:e:\document\github\nhsh_cppresearch\demo\demo.cpp
+	"demo.h"
+	"ioctrl.h"
+
+1491323703 e:\document\github\nhsh_cppresearch\demo\demo.h
+	<stdio.h>
+	<windows.h>
+	<conio.h>
+	<time.h>
+	"ioctrl.h"
+
+1491317738 e:\document\github\nhsh_cppresearch\demo\ioctrl.h
+	<windows.h>
+	<conio.h>
+
+1491317738 source:e:\document\github\nhsh_cppresearch\demo\ioctrl.cpp
+	<windows.h>
+	<conio.h>
+
+1491324326 source:e:\document\github\nhsh_cppresearch\demo\main.cpp
+	<stdio.h>
+	"ioctrl.h"
+	"demo.h"
+

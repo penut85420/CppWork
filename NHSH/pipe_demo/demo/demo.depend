@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1491315346 source:c:\users\user\desktop\lib\deeeeemo\demo\ioctrl.cpp
+	<windows.h>
+	<conio.h>
+
+1491379472 source:c:\users\user\desktop\lib\deeeeemo\demo\main.cpp
+	<stdio.h>
+	"ioctrl.h"
+
+1491315346 c:\users\user\desktop\lib\deeeeemo\demo\ioctrl.h
+	<windows.h>
+	<conio.h>
+

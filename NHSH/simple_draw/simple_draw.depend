@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1491317738 source:e:\document\github\nhsh_cppresearch\simple_draw\ioctrl.cpp
+	<windows.h>
+	<conio.h>
+
