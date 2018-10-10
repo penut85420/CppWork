@@ -1,0 +1,10 @@
+class myArray {
+private:
+	int *mArray;
+	int mNumArray;
+public:
+	myArray();
+	~myArray();
+	void push(int);
+	int pop();
+}

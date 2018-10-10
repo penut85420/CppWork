@@ -1,0 +1,31 @@
+	<c:set var="count" value="0" scope="page" />
+	<c:forEach items="${sessionScope.yelp}" var="element">
+	<table border=3 rules="all">
+			<tr><td colspan=2>
+			<input type="button" class="collect" name="collect" value="${element.getBusinessID().getBusiness().getBusinessID()}" /></td></tr>
+			<tr><td>Name</td><td>${element.getName()}</td></tr>
+			<tr><td>Image</td><td><img width=200 src="${element.getImageURL()}"/></td></tr>
+			<tr><td>Rating</td><td><div id="rate${count}"></div>${element.getRating()}</td></tr>
+			<c:choose>
+			<c:when test="${element.getRating()>=0 }">
+			<script>
+			$(function () {
+					$("#rate${count}").rateYo({
+					rating: "${element.getRating()}"
+					}); 
+				});
+			</script>
+			</c:when>
+			</c:choose>
+			<tr><td>Distance</td><td>${element.getDistance()}</td></tr>
+			<tr><td>Review</td><td>${sessionScope.yelpReview}</td></tr>
+			<form action="detail.jsp" method="POST">
+			<input type="hidden" value="${element.getBusinessID()}" name="ID">
+			<input type="hidden" value="${element.getLatitude()}" name="lat">
+			<input type="hidden" value="${element.getLongitude()}" name="lng">
+			<tr><td>More</td><td><input type="submit" value="click me" id="detail"/></td></tr>
+			</form>
+	</table>
+	<br><br>
+	<c:set var="count" value="${count + 1}" scope="page"/>
+	</c:forEach>

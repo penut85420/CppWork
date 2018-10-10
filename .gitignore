@@ -7,3 +7,5 @@ ipch
 *.filters
 *.user
 *.7z
+*.o
+*.exe
